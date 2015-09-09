@@ -33,19 +33,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QPz-Cb-0pr">
-                                <rect key="frame" x="175" y="116" width="250" height="122"/>
+                                <rect key="frame" x="175" y="116" width="250" height="121"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hh5-9L-z2K">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibq-T5-f7K">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F29-9c-2xx" userLabel="UserNameTextField">
-                                                <rect key="frame" x="0.0" y="21" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="20" width="250" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="KjA-1c-HKM"/>
                                                 </constraints>
@@ -55,16 +55,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-nU-nsS">
-                                        <rect key="frame" x="0.0" y="71" width="250" height="51"/>
+                                        <rect key="frame" x="0.0" y="70" width="250" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQA-ee-ZKP">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-ph-D7b" userLabel="PaswordTextField">
-                                                <rect key="frame" x="0.0" y="21" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="20" width="250" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="6me-f5-KN2"/>
                                                 </constraints>
@@ -76,10 +76,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdc-xo-Vxe">
-                                <rect key="frame" x="281" y="298" width="38" height="30"/>
+                                <rect key="frame" x="281" y="297" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="4Cx-dh-yMT" kind="show" id="ZUV-Vl-cAo"/>
+                                    <action selector="loginPressed:" destination="h6n-5B-46g" eventType="touchUpInside" id="j3Q-kP-mPz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Gxr-ph-D7b" id="8Rg-NI-A3K"/>
                         <outlet property="userNameTextField" destination="F29-9c-2xx" id="WVc-rS-xnh"/>
+                        <segue destination="4Cx-dh-yMT" kind="show" identifier="showDetail" id="5ez-Rp-1vO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1N-g2-rmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +105,7 @@
         <!--Detail View Controller-->
         <scene sceneID="dpC-sf-uj2">
             <objects>
-                <viewController id="4Cx-dh-yMT" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="4Cx-dh-yMT" customClass="DetailViewController" customModule="UITestDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GAg-TF-gyY"/>
                         <viewControllerLayoutGuide type="bottom" id="0I4-Im-N20"/>

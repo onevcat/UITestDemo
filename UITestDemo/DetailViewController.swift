@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var userName: String?
+    var userName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()

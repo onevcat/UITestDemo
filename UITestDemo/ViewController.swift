@@ -8,8 +8,6 @@
 
 import UIKit
 
-let userInfo = ["onevcat": "123"]
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
@@ -25,23 +23,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if let userName = userNameTextField.text,
-               password = passwordTextField.text
-        {
-            if userInfo[userName] == password {
-                print("Login successfully.")
-                return true
-            } else {
-                if userName.characters.count == 0 || password.characters.count == 0 {
-                    UIAlertController.showAlertTitle("", message: "Empty username/password", cancelButtonTitle: "OK", fromViewController: self)
-                } else {
-                    UIAlertController.showAlertTitle("", message: "Invalid username/password", cancelButtonTitle: "OK", fromViewController: self)
-                }
+    @IBAction func loginPressed(sender: AnyObject) {
 
-                return false
-            }
-        } else {
+        if let userName = userNameTextField.text,
+            password = passwordTextField.text
+        {
+            let indicator = UIActivityIndicatorView.showInView(view)
+            APIClient.login(userName, password: password, completionHandler: { (successful, error) -> () in
+                
+                indicator.hide()
+                
+                if successful {
+                    self.performSegueWithIdentifier("showDetail", sender: sender)
+                } else {
+                    switch error! {
+                    case .EmptyUserName, .EmptyPassword:
+                        UIAlertController.showAlertTitle("", message: "Empty username/password", cancelButtonTitle: "OK", fromViewController: self)
+                    case .UserNotFound:
+                        UIAlertController.showAlertTitle("", message: "User not exists", cancelButtonTitle: "OK", fromViewController: self)
+                    case .WrongPassword:
+                        UIAlertController.showAlertTitle("", message: "Wrong password", cancelButtonTitle: "OK", fromViewController: self)
+                    }
+                }
+            })
+        }  else {
             fatalError("should not hit here")
         }
     }
@@ -57,6 +62,35 @@ extension UIAlertController {
         let action = UIAlertAction(title: cancelButtonTitle, style: .Cancel, handler: nil)
         alert.addAction(action)
         viewController.presentViewController(alert, animated: true, completion: nil)
+    }
+}
+
+var activityShowingCount = 0
+extension UIActivityIndicatorView {
+    
+    static func showInView(view: UIView) -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        indicator.center = view.center
+        
+        view.addSubview(indicator)
+        indicator.startAnimating()
+        
+        if activityShowingCount == 0 {
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        }
+        
+        activityShowingCount += 1
+        
+        return indicator
+    }
+    
+    func hide() {
+        activityShowingCount -= 1
+        if activityShowingCount == 0 {
+            UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        }
+
+        removeFromSuperview()
     }
 }
 

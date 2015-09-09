@@ -15,6 +15,7 @@
 		4BD214AB1B9FE344000157A0 /* UITestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD214AA1B9FE344000157A0 /* UITestDemoTests.swift */; };
 		4BD214B61B9FE344000157A0 /* UITestDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD214B51B9FE344000157A0 /* UITestDemoUITests.swift */; };
 		4BF8FDCF1BA00A04007F459A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8FDCE1BA00A04007F459A /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D1FA73611BA0610A007815A8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FA73601BA0610A007815A8 /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4BD214B51B9FE344000157A0 /* UITestDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestDemoUITests.swift; sourceTree = "<group>"; };
 		4BD214B71B9FE344000157A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BF8FDCE1BA00A04007F459A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D1FA73601BA0610A007815A8 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				4BD214951B9FE344000157A0 /* AppDelegate.swift */,
 				4BD214971B9FE344000157A0 /* ViewController.swift */,
+				D1FA73601BA0610A007815A8 /* APIClient.swift */,
 				4BD214991B9FE344000157A0 /* Main.storyboard */,
 				4BF8FDCE1BA00A04007F459A /* DetailViewController.swift */,
 				4BD2149C1B9FE344000157A0 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 				4BF8FDCF1BA00A04007F459A /* DetailViewController.swift in Sources */,
 				4BD214981B9FE344000157A0 /* ViewController.swift in Sources */,
 				4BD214961B9FE344000157A0 /* AppDelegate.swift in Sources */,
+				D1FA73611BA0610A007815A8 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
