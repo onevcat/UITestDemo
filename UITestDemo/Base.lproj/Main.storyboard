@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GDT-Sn-SOc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GDT-Sn-SOc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -41,11 +41,11 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibq-T5-f7K">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F29-9c-2xx" userLabel="UserNameTextField">
-                                                <rect key="frame" x="0.0" y="20" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="250" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="KjA-1c-HKM"/>
                                                 </constraints>
@@ -55,16 +55,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-nU-nsS">
-                                        <rect key="frame" x="0.0" y="70" width="250" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="250" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQA-ee-ZKP">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-ph-D7b" userLabel="PaswordTextField">
-                                                <rect key="frame" x="0.0" y="20" width="250" height="30"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="250" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="6me-f5-KN2"/>
                                                 </constraints>
@@ -113,8 +113,47 @@
                     <view key="view" contentMode="scaleToFill" id="8pN-dm-sGn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtB-DQ-SsP">
+                                <rect key="frame" x="244" y="172" width="72" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到次数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efr-u4-TZk">
+                                <rect key="frame" x="266" y="266" width="68" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syo-jC-wgv">
+                                <rect key="frame" x="295" y="294" width="10.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-Sh-hJV">
+                                <rect key="frame" x="311" y="171" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="4Cx-dh-yMT" eventType="valueChanged" id="hs9-sh-QOt"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="syo-jC-wgv" firstAttribute="centerX" secondItem="efr-u4-TZk" secondAttribute="centerX" id="1gf-al-8Ec"/>
+                            <constraint firstItem="efr-u4-TZk" firstAttribute="top" secondItem="GAg-TF-gyY" secondAttribute="bottom" constant="202" id="Rfl-sh-tT3"/>
+                            <constraint firstItem="UjW-Sh-hJV" firstAttribute="top" secondItem="GAg-TF-gyY" secondAttribute="bottom" constant="107" id="Tgg-QM-V4F"/>
+                            <constraint firstItem="efr-u4-TZk" firstAttribute="centerX" secondItem="8pN-dm-sGn" secondAttribute="centerX" id="fPN-d8-b2A"/>
+                            <constraint firstItem="NtB-DQ-SsP" firstAttribute="centerX" secondItem="8pN-dm-sGn" secondAttribute="centerX" constant="-20" id="iWT-EU-OVb"/>
+                            <constraint firstItem="UjW-Sh-hJV" firstAttribute="centerX" secondItem="8pN-dm-sGn" secondAttribute="centerX" constant="35" id="loc-CL-8yG"/>
+                            <constraint firstItem="syo-jC-wgv" firstAttribute="top" secondItem="efr-u4-TZk" secondAttribute="bottom" constant="8" id="rLK-Xe-Nq3"/>
+                            <constraint firstItem="NtB-DQ-SsP" firstAttribute="top" secondItem="GAg-TF-gyY" secondAttribute="bottom" constant="108" id="yar-Gs-aSk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="syo-jC-wgv" id="JDg-2s-KXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rh-1Y-aty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

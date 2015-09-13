@@ -31,7 +31,6 @@ class UITestDemoUITests: XCTestCase {
     func testEmptyUserNameAndPassword() {
         let app = XCUIApplication()
         app.buttons["Login"].tap()
-
         
     }
     

@@ -11,10 +11,17 @@ import UIKit
 class DetailViewController: UIViewController {
 
     var userName: String!
+    @IBOutlet weak var countLabel: UILabel!
+    
+    var count: Int = 0 {
+        didSet {
+            countLabel.text = String(count)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Hello \(userName)"
+        title = userName
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +30,13 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func switchValueChanged(sender: UISwitch) {
+        if sender.on {
+            count = count + 1
+        } else {
+            count = count - 1
+        }
+    }
 
     /*
     // MARK: - Navigation
