@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import UITestDemo
 
 class UITestDemoUITests: XCTestCase {
         
@@ -31,6 +32,68 @@ class UITestDemoUITests: XCTestCase {
     func testEmptyUserNameAndPassword() {
         let app = XCUIApplication()
         app.buttons["Login"].tap()
+        
+        let alerts = app.alerts
+        let label = app.alerts.staticTexts["Empty username/password"]
+        
+        let alertCount = NSPredicate(format: "count == 1")
+        let labelExist = NSPredicate(format: "exists == 1")
+        
+        expectationForPredicate(alertCount, evaluatedWithObject: alerts, handler: nil)
+        expectationForPredicate(labelExist, evaluatedWithObject: label, handler: nil)
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
+    
+    func testLoginSuccessfully() {
+        
+        let userName = "onevcat"
+        let password = "123"
+        
+        let app = XCUIApplication()
+        
+        let userNameTextField = app.textFields["username"]
+        userNameTextField.tap()
+        userNameTextField.typeText(userName)
+        
+        let passwordTextField = app.secureTextFields["password"]
+        passwordTextField.tap()
+        passwordTextField.typeText(password)
+
+        app.buttons["Login"].tap()
+
+        let navTitle = app.navigationBars[userName].staticTexts[userName]
+        expectationForPredicate(NSPredicate(format: "exists == 1"), evaluatedWithObject: navTitle, handler: nil)
+
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
+    
+    func testSwitchAndCount() {
+        let userName = "onevcat"
+        let password = "123"
+        
+        let app = XCUIApplication()
+        
+        let userNameTextField = app.textFields["username"]
+        userNameTextField.tap()
+        userNameTextField.typeText(userName)
+        
+        let passwordTextField = app.secureTextFields["password"]
+        passwordTextField.tap()
+        passwordTextField.typeText(password)
+        
+        app.buttons["Login"].tap()
+
+        sleep(3)
+        
+        let switcher = app.switches["checkin"]
+        let l = app.staticTexts["countLabel"]
+
+        switcher.tap()
+        XCTAssertEqual(l.label, "1", "Count label should be 1 after clicking check in.")
+        
+        switcher.tap()
+        XCTAssertEqual(l.label, "0", "And 0 after clicking again.")
         
     }
     
